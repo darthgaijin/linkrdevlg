@@ -1,0 +1,21 @@
+{% extends 'bootstrap-main.html' %}
+{% load static %}
+{% block content %}
+<body onload="removeOldP(); insertNewImg()">
+  <div class="spacer-half"></div>
+<div class="container">
+        <div class="text-center">
+          <h3>Account Editor</h3>
+          <p>Configure to your liking</p>
+          <div class="spacer-half"></div>
+          <a href="{% url 'edit-profile' %}" class="btn-mainSignup">Edit Profile</a>
+          <a href="{% url 'user-profile' profile.username %}" class="btn-mainSignup">View Profile</a>
+        </div>
+</div>
+
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'bootstrap-main.html' %}
+
+{% block content %}
+
+<div class="spacer"></div>
+<div class="container">
+    <h1 class="Header">Inovation starts with an idea</h1>
+    <p class="Secondary">Assisting Personal and Business needs.</p>
+</div>    
+<div class="spacer-half"></div>
+<div class="container d-flex justify-content-center">
+    <a href="{% url 'signup' %}" class="btn-mainSignup">Initiate for free</a>
+</div>
+
+<div class="spacer"></div>
+
+<div class="container d-flex justify-content-center userListBorder">
+    <i class="fas fa-user"></i>
+    <p class="usersListBr">People Using Linkr</p>
+    <i class="fas fa-user-tie"></i>
+</div>
+
+<div class="d-flex justify-content-between">
+    <div class="container mt-5 mb-3">
+        <div class="row d-flex justify-content-between">
+            {% for user in profiles %}
+            <div class="usersBorder col-md-4">
+                <a class="cardLinks" href="{% url 'user-profile' user.username %}">
+                <div class="card p-3 mb-2">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex flex-row align-items-center">
+                            <div class="icon"><img src="{{user.profileImage.url}}" class="profileImg"></div>
+                            <div class="ms-2 c-details">
+                                <h6 class="mb-0">@{{user.username|lower}}</h6> <span>{{user.firstName|capfirst}} {{user.lastName|capfirst}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        {% if user.isOwner and user.isAdmin %}
+                        <p class="heading"><i class="fas fa-hand-sparkles"></i> <i class="fas fa-wrench"></i> Linkr Creator</p>
+                        <p class="quote">"{{user.userStatus}}"</p>
+                        {% elif user.isDonator%}
+                        <p class="heading"><i class="fas fa-donate"></i> Donator</p>
+                        <p class="quote">"{{user.userStatus}}"</p>
+                        {% elif user.isSuperDonator%}
+                        <p class="heading"><i class="fas fa-coins"></i> Super Donator</p>
+                        <p class="quote">"{{user.userStatus}}"</p>
+                        {% elif user.isAdmin%}
+                        <p class="heading"><i class="fas fa-wrench"></i> Linkr Admin</p>
+                        <p class="quote">"{{user.userStatus}}"</p>
+                        {% elif user.isNewUser%}
+                        <p class="heading"><i class="fas fa-baby"></i> New User</p>
+                        <p class="quote">"{{user.userStatus}}"</p>
+                        {% else %}
+                        <p class="heading">Status Error</p>
+                        {% endif %}
+                    </div>
+                </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

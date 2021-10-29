@@ -1,0 +1,45 @@
+{% extends 'bootstrap-main.html' %}
+{% load static %}
+{% block content %}
+<body onload="removeOldP(); insertNewImg()">
+  <div class="spacer-half"></div>
+<div class="container">
+        <div class="text-center">
+          <h3>Account Editor</h3>
+          <p>Configure to your liking</p>
+        </div>
+    
+        
+        <form method="POST" class="form" enctype="multipart/form-data"
+          <!-- Input:Text -->
+          {% csrf_token %}
+          <div class="formSpacerBlank"></div>
+          {% for i in form%}
+          <div id="dividerEntry{{ forloop.counter }}" class="form-group d-flex formSpacer">
+              <label class="form_label d-flex align-self-center" style="max-width: 30%; margin-left: 15px;" for="formInput#text">{{i.label}}</label>
+              <p id="inputField{{ forloop.counter }}">{{i}}</p>
+              {% for e in i.errors %}
+              <p style="color: red;">{{e}}</p>
+              {% endfor  %}
+            </div>
+            <div class="formSpacerBlank"></div>
+          {% endfor %}
+          <div class="auth__actions">
+            <input class="btn-mainSignup" type="submit" value="Save" />
+          </div>
+        </form>    
+</div>
+
+<div class="spacer-half"></div>
+
+<script>
+  function removeOldP() {
+    var myobj = document.getElementById("inputField1");
+    myobj.remove();
+  }
+  function insertNewImg(){
+  document.getElementById('dividerEntry1').innerHTML = '<label class="form_label d-flex align-self-center" style="max-width: 30%; margin-left: 15px;" for="formInput#text">Profile Image</label><div class="inderDivUpload"><input class="buttonUpload" type="file" name="profileImage" accept="image/*" id="id_profileImage"> <label class="id_profileImage" for="id_profileImage">Choose A Photo</label></div>';
+  }
+</script>
+
+{% endblock %}

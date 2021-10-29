@@ -1,0 +1,138 @@
+body{
+  font-family: 'Montserrat', sans-serif !important;
+}
+form {
+  position: relative;
+  width: 100%;
+  margin: 50px auto;
+  padding: 50px;
+  background: white;
+  text-align: center;
+  border: none;
+}
+
+input {
+  width: 65%;
+  margin: 20px 0;
+  padding: 10px;
+  border:none;
+  border-radius: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.377);
+  outline: none;
+  font-size: 20px;
+  font-family: 'Economica', 'Arial', sans-serif;
+  font-weight: 400;
+  transition: all 0.2s ease;
+}
+
+input:focus { border-color: cornflowerblue; }
+
+
+button.valid,
+button.valid:hover { background: mediumseagreen; }
+
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+svg path {
+  stroke-width: 10px;
+  stroke: mediumseagreen;
+  fill: none;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+svg path.hidden { opacity: 0; }
+
+svg path.animate { animation: drawBorder 1s linear; }
+
+@keyframes drawBorder {
+  from {
+    stroke-dasharray: 4000;
+    stroke-dashoffset: 4000;
+  }
+  
+  to {
+    stroke-dasharray: 4000;
+    stroke-dashoffset: 0;
+  }
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 700;
+}
+.btn-mainSignup{
+  border: 20px solid cornflowerblue;
+  background-color: cornflowerblue;
+  color: white;
+  border-radius: 10px;
+  font-size: larger;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.btn-mainSignup:hover {
+  border: 20px solid rgb(71, 128, 235);
+  background-color: rgb(71, 128, 235);
+  color: white;
+  border-radius: 10px;
+  font-size: larger;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.formSpacer{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.199);
+  border-radius: 10px;
+  background-color: rgb(230, 230, 230);
+}
+.formSpacerBlank{
+  margin-top: 25px;
+}
+.form-group p {
+  width: 100%;
+}
+#id_profileImage{
+  color: black !important;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+}
+input[type="file"]:focus{
+  background-color: cornflowerblue;
+}
+#dividerEntry1 input[type="file"]{
+  display: none;
+}
+#dividerEntry1 p{
+  width: 0px;
+}
+.id_profileImage {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  border: 20px solid cornflowerblue;
+  background-color: cornflowerblue;
+  color: white;
+  border-radius: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.id_profileImage:hover {
+  border: 20px solid rgb(71, 128, 235);
+  background-color: rgb(71, 128, 235);
+}
+.inderDivUpload{
+  padding-left: 5%;
+  width: 100%;
+}

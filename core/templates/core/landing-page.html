@@ -1,0 +1,49 @@
+{% extends 'bootstrap-main.html' %}
+{% block content %}
+<div class="spacer"></div>
+<div class="container">
+    <h1 class="Header">Hold links in one simple place!</h1>
+    <p class="Secondary">Best of all. NO hassle required.</p>
+    {{profile}}
+</div>    
+<div class="spacer-half"></div>
+<div class="container d-flex justify-content-center">
+    <a href="{% url 'signup' %}" class="btn-mainSignup">Initiate for free</a>
+</div>
+<div class="container d-flex justify-content-center">
+    <p style="font-size: small;">Already a member? <a href="{% url 'login' %}">Login</a></p>
+</div>
+<div class="spacer-half"></div>
+<div class="spacer"></div>
+
+<div class="container d-flex justify-content-center">
+    <div class="phone">
+        <div class="d-flex justify-content-center phoneMaxW d-flex flex-column bd-highlight mb-3">
+            <div class="btm-spacerx2"></div>
+            <div class="p-2 bd-highlight d-flex justify-content-center"><img src="https://www.w3schools.com/howto/img_avatar.png" class="roundedImg"></div>
+            <div class="p-2 bd-highlight d-flex justify-content-center" style="color: white;">@username</div>
+            <div class="btm-spacer "></div>
+            <div class="blankLink p-2 bd-highlight">‏‏‎ ‎‎‎‎‎‎</div>
+            <div class="btm-spacer "></div>
+            <div class="blankLink p-2 bd-highlight">‏‏‎ ‎</div>
+            <div class="btm-spacer "></div>
+            <div class="blankLink p-2 bd-highlight">‏‏‎ ‎</div>
+            <div class="btm-spacer "></div>
+            <div class="blankLink p-2 bd-highlight">‏‏‎ ‎</div>
+            <div class="btm-spacer "></div>
+            <div class="blankLink p-2 bd-highlight">‏‏‎ ‎</div>
+        </div>
+    </div>
+</div>
+<!-- <div class="container d-flex justify-content-center">
+    <div class="">
+        <div class="d-flex justify-content-center flex-column bd-highlight mb-3">
+            <div class="lineDisplay p-2 bd-highlight d-flex justify-content-center" style="color: black;"></div>
+            <div class="lineDisplay p-2 bd-highlight d-flex justify-content-center" style="color: black;"></div>
+        </div>
+    </div>
+</div> -->
+
+<div class="spacer"></div>
+
+{% endblock content %}

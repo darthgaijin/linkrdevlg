@@ -1,0 +1,105 @@
+{% extends 'bootstrap-main.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if page == 'register' %}
+
+<div class="spacer-half"></div>
+
+<div class="container">
+    <div class="card">
+      <div class="auth__header text-center">
+        <h3>Account Sign Up</h3>
+        <p>Create a new Linkr account</p>
+      </div>
+
+      
+      <form action="{% url 'signup' %}" method="POST" class="form auth__form">
+        <!-- Input:Text -->
+        {% csrf_token %}
+
+        {% for i in form%}
+        <div class="form-group">
+            <label for="formInput#text">{{i.label}}</label>
+            {{i}}
+
+            {% for e in i.errors %}
+                <p style="color: red;">{{e}}</p>
+            {% endfor  %}
+          </div>
+        {% endfor %}
+        <div class="auth__actions">
+          <input class="btn-mainSignup" type="submit" value="Sign Up" />
+        </div>
+      </form>
+
+    <div class="container">
+      <div class="text-center">
+        <h1>Already have an Account?</h1>
+        <br>
+        <a class="btn-mainSignup" href="{% url 'login'%}">Log In</a>
+        <br>
+      </div>
+    </div>
+
+    </div>
+  </div>
+  <div class="spacer-half"></div>
+
+{% else %}
+
+<div class="spacer-half"></div>
+<div class="container">
+    <div class="card">
+      <div class="auth__header text-center">
+        <h3>Account Login</h3>
+        <p>Welcome Back Fellow Linkr!</p>
+      </div>
+
+      <form action="{% url 'login' %}" method="POST" class="form auth__form">
+        <!-- Input:Username -->
+        {% csrf_token %}
+        <div class="form__field">
+          <label for="formInput#text">Username: </label>
+          <input
+            class="input input--text"
+            id="formInput#text"
+            type="text"
+            name="username"
+            placeholder="Enter your username..."
+          />
+        </div>
+
+        <!-- Input:Password -->
+        <div class="form__field">
+          <label for="formInput#password">Password: </label>
+          <input
+            class="input input--password"
+            id="formInput#passowrd"
+            type="password"
+            name="password"
+            placeholder="••••••••"
+          />
+        </div>
+        <a href="forgetpassword.html">Forget Password?</a>
+        <div class="auth__actions">
+          <input class="btn-mainSignup" type="submit" value="Login" />
+          <a href="{% url 'signup'%}">Make an account?</a>
+        </div>
+      </form>
+
+      <!-- <div class="container">
+        <div class="text-center">
+          <h1>Don’t have an Account?</h1>
+          <br>
+          <a class="btn-mainSignup" href="{% url 'signup'%}">Sign Up</a>
+          <br>
+        </div>
+      </div> -->
+
+    </div>
+  </div>
+{% endif %}
+
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% load static %}
+<nav class="navbar navbar-light bg-light">
+    <div class="container-lg">
+        <a class="navbar-brand" href="{% url 'landing-page' %}">
+            <img src="https://i.imgur.com/xLhdjdD.png" alt="Logo" width="300">
+        </a>
+        <ul class="nav justify-content-end">
+            <li class="nav-item ">
+                <a class="nav-link link-dark" aria-current="page" href="{% url 'landing-page' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link-dark" href="{% url 'all-users' %}">Discover</a>
+            </li>
+            {% if request.user.is_authenticated %}
+            <li style="padding-right: 10px;" class="nav-item"><a class="btn btn-outline-info" href="{% url 'profile-main' %}">Profile</a></li>
+
+            <li class="nav-item"><a class="btn btn-outline-primary" href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+            <li class="nav-item"><a class="btn btn-outline-primary" href="{% url 'login' %}">Login/Signup</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

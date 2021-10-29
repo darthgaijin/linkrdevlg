@@ -1,0 +1,52 @@
+{% extends 'user-main.html' %}
+
+{% block content %}
+
+<div class="">
+    <div class="container">
+    <div class="col-xs-12">
+            <div class="text-center" style="padding-top: 30px; padding-bottom: 30px;">
+                <a href="{% url 'landing-page' %}"><img src="{{profile.profileImage.url}}" class="backdrop devlgLinkr"></a>
+                <h2 style="color: #ffffff; padding-top: 20px;">@{{profile.username|lower}}</h2>
+            </div>
+    </div>
+    </div>
+
+
+    <div class="container">
+    <div class="col-xs-12">
+            <div class="text-center">
+                {% if profile.socialLink1 != None %}
+                <div style="padding-bottom: 30px;">
+                    <button onclick="location.href='{{profile.socialLink1}}'" type="button" class="devlg-btn" style="width: 80%; padding-top:10px; padding-bottom:10px; font-weight: 800;">{{profile.socialTitle1}}</button>
+                </div>
+                {% endif %}
+                {% if profile.socialLink2 != None %}
+                <div style="padding-bottom: 30px;">
+                    <button onclick="location.href='{{profile.socialLink2}}'" type="button" class="devlg-btn" style="width: 80%; padding-top:10px; padding-bottom:10px; font-weight: 600;">{{profile.socialTitle2}}</button>
+                </div>
+                {% endif %}
+                {% if profile.socialLink3 != None %}
+                <div style="padding-bottom: 30px;">
+                    <button onclick="location.href='{{profile.socialLink3}}'" type="button" class="devlg-btn" style="width: 80%; padding-top:10px; padding-bottom:10px; font-weight: 600;">{{profile.socialTitle3}}</button>
+                </div>
+                {% endif %}
+                {% if profile.socialLink4 != None %}
+                <div style="padding-bottom: 30px;">
+                    <button onclick="location.href='{{profile.socialLink4}}'" type="button" class="devlg-btn" style="width: 80%; padding-top:10px; padding-bottom:10px; font-weight: 600;">{{profile.socialTitle4}}</button>
+                </div>
+                {% endif %}
+                {% if profile.socialLink5 != None %}
+                <div style="padding-bottom: 30px;">
+                    <button onclick="location.href='{{profile.socialLink5}}'" type="button" class="devlg-btn" style="width: 80%; padding-top:10px; padding-bottom:10px; font-weight: 600;">{{profile.socialTitle5}}</button>
+                </div>
+                {% endif %}
+            </div>
+    </div>
+    </div>
+
+        <div class="text-center">
+            <a href="https://www.devlg.com" style="color: white;">Provided By DEVLG</a>
+        </div>
+</div>
+{% endblock content %}
