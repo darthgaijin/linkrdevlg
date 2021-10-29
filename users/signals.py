@@ -20,7 +20,7 @@ def createProfile(sender, instance, created, **kwargs):
         <img src="https://i.imgur.com/e3ExQlz.png" alt="CompanyLogo" style="max-width:150px; border:5px; border-color:white; margin:20px;">
     </div>
     <div align="center" style="background-color:#FFFFFF; padding-left:20px; padding-right:20px; max-width:550px; margin:auto; border-radius:5px; padding-bottom:5px; text-align:left; margin-bottom:40px; width:80%"> 
-        <h2 style="padding-top:25px; min-width:600; align:center; font-family:Roboto">Hi, {Profile.fistName}</h2>
+        <h2 style="padding-top:25px; min-width:600; align:center; font-family:Roboto">Hi, {Profile.firstName}</h2>
         <p style="max-width:500px; text-align: justify; align:center; font-family:Roboto; padding-bottom:0px; wrap:hard; line-height:25px">Thanks for creating an account with Linkr We're so happy to have you on board!</p>
         <p style="max-width:500px; text-align: justify; align:center; font-family:Roboto; padding-bottom:0px; wrap:hard">Should you have any issues or suggestions for this product. Don't hesitate in emailing us at <a href="mailto:info@devlg.com">info@devlg.com</a></p style="color:black">
         <p style="max-width:500px; text-align: justify; align:center; font-family:Roboto; padding-bottom:0px; wrap:hard">We are always aiming to improve.</p style="color:black">

@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-hrb-ospvdiawp(f2egci=c1lam&z5j0_vlla4&6t+gnkk3qj9@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['linkr.devlg.com','127.0.0.1','localhost']
 
 
 # Application definition

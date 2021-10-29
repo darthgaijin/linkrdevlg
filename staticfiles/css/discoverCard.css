@@ -1,0 +1,77 @@
+.card {
+    border: none;
+    border-radius: 10px
+}
+
+.c-details span {
+    font-weight: 300;
+    font-size: 13px
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 39px
+}
+
+.badge span {
+    background-color: #fffbec;
+    width: 60px;
+    height: 25px;
+    padding-bottom: 3px;
+    border-radius: 5px;
+    display: flex;
+    color: #fed85d;
+    justify-content: center;
+    align-items: center
+}
+
+.progress {
+    height: 10px;
+    border-radius: 10px
+}
+
+.progress div {
+    background-color: red
+}
+
+.text1 {
+    font-size: 14px;
+    font-weight: 600
+}
+
+.text2 {
+    color: #a5aec0
+}
+.profileImg{
+    border: solid white 2px;
+    border-radius: 50%;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+}
+.usersBorder{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.377);
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+.usersListBr{
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.userListBorder{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.199);
+    border-radius: 10px;
+}
+.heading{
+    color: dodgerblue;
+}
+.quote{
+    font-size: small;
+}
