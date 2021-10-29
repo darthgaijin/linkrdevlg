@@ -12,8 +12,6 @@ def createProfile(sender, instance, created, **kwargs):
         user=instance
         profile= Profile.objects.create(user=user, username=user.username, email=user.email, firstName=user.first_name, lastName=user.last_name)
 
-        with open(settings.WELCOME_EMAIL_DIR, 'r') as file:
-            data = file.read()
         subject= "Linkr | Welcome to the service!"
         message= f"""<div>
     <div style="text-align:center; mid-width:375px; min-height:50px; padding-left:20px; padding-right:20px; max-width:600px; margin:auto; padding-top:10px">
@@ -31,14 +29,14 @@ def createProfile(sender, instance, created, **kwargs):
     </div>
 </div>"""
 
-        send_mail(
-            subject,
-            message,
-            settings.EMAIL_HOST_USER,
-            [profile.email],
-            fail_silently=False,
-            html_message=message
-        )
+        #send_mail(
+        #    subject,
+        #    message,
+        #    settings.EMAIL_HOST_USER,
+        #    [profile.email],
+        #    fail_silently=False,
+        #    html_message=message
+        #)
 
 def updateUser(sender, instance, created, **kwargs):
     profile = instance
