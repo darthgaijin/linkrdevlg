@@ -1,7 +1,5 @@
 # Linktree Clone - Django
 
-![Tech Stack Badge](https://img.shields.io/badge/Tech%20Stack-YourTechStackHere-blue)
-
 ## 🚀 Tech Stack
 
 This project is built with:
